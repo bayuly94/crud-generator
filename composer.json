@@ -1,0 +1,30 @@
+{
+    "name": "bayuly94/crud-generator",
+    "description": "Laravel CRUD Generator reference ibex/crud-generator",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Bayu",
+            "email": "bayuly94@gmail.com"
+        }
+    ],
+    "keywords": ["laravel", "crud", "crud generator", "laravel crud generator", "laravel package", "bootstrap css", "tailwind css", "alpine js"],
+    "require": {
+        "php": "^8.2",
+        "laravel/framework": "^10.30|^11.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Bayuly94\\CrudGenerator\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Bayuly94\\CrudGenerator\\CrudServiceProvider"
+            ]
+        }
+    },
+    "minimum-stability": "stable",
+    "prefer-stable": true
+}
