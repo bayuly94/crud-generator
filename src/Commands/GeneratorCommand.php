@@ -363,7 +363,7 @@ abstract class GeneratorCommand extends Command implements PromptsForMissingInpu
             <i class="fa fa-sort{{ request()->sort_col == "{{col}}" ? "-" : "" }}{{ request()->sort_col == "{{col}}" ? (request()->sort == "desc" ? "down" : "up") : "" }}"></i>
             </a></th>';
 
-            $th = preg_replace('/\s+/', ' ', $th);
+            // $th = preg_replace('/\s+/', ' ', $th);
         } 
         return str_replace(
             array_keys($replace),
