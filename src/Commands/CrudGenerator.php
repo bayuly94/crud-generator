@@ -310,7 +310,7 @@ class CrudGenerator extends GeneratorCommand
 
         $this->buildLayout();
 
-        foreach (['index', 'table-header-row', 'create', 'edit', 'form', 'show'] as $view) {
+        foreach (['index', 'th', 'create', 'edit', 'form', 'show'] as $view) {
             $viewTemplate = str_replace(
                 array_keys($replace), array_values($replace), $this->getStub("views/{$this->options['stack']}/$view")
             );
