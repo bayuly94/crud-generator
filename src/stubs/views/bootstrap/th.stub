@@ -5,7 +5,7 @@
                 "sort" => request()->sort_col != $col ? null : (request()->sort == "asc" ? "desc" : (request()->sort == "desc" ? null : "desc")),
             ]) }}">
 
-            {{ $title }}
+            __('{{ $title }}')
             <i class="fa fa-sort{{ request()->sort_col == $col ? "-" : "" }}{{ request()->sort_col == $col ? (request()->sort == "desc" ? "down" : "up") : "" }}"></i>
         </a>
     </th>
