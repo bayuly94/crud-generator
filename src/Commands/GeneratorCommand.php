@@ -349,22 +349,7 @@ abstract class GeneratorCommand extends Command implements PromptsForMissingInpu
         $th = '<th '.$attr.'>{{title}}</th>';
 
         if ($this->options['stack'] == 'bootstrap') {
-
-
-
-            $th = '<th>
-                                        <a href="{{ route("{{modelRoute}}.index", [
-                                                "search"    => request()->search,
-                                                "sort_col"  => request()->sort_col == "{{col}}" && request()->sort == "desc" ? null : "{{col}}",
-                                                "sort" => request()->sort_col != "{{col}}" ? null : (request()->sort == "asc" ? "desc" : (request()->sort == "desc" ? null : "desc")),
-                                            ]) }}">
-             
-                                            {{title}}
-                                            <i class="fa fa-sort{{ request()->sort_col == "{{col}}" ? "-" : "" }}{{ request()->sort_col == "{{col}}" ? (request()->sort == "desc" ? "down" : "up") : "" }}"></i>
-                                        </a>
-                                    </th>';
-
-            // $th = preg_replace('/\s+/', ' ', $th);
+            $th = '@include("{{modelNameLowerCase}}.table-header-row",["col" => "'.$col.'", "title" => "'.$title.'"])';
         } 
         return str_replace(
             array_keys($replace),
