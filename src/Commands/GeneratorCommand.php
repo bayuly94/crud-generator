@@ -349,7 +349,7 @@ abstract class GeneratorCommand extends Command implements PromptsForMissingInpu
         $th = '<th '.$attr.'>{{title}}</th>';
 
         if ($this->options['stack'] == 'bootstrap') {
-            $th = '     @include("{{modelNameLowerCase}}.th",["col" => "'.$col.'", "title" => "'.$title.'"])';
+            $th = '@include("{{modelNameLowerCase}}.th",["col" => "'.$col.'", "title" => "'.$title.'"])';
         } 
         return str_replace(
             array_keys($replace),
