@@ -8,6 +8,11 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-sm-12">
+                @if ($message = Session::get('success'))
+                    <div class="alert alert-success">
+                        <p>{{ $message }}</p>
+                    </div>
+                @endif
                 <div class="card">
                     <div class="card-header">
                         <div style="display: flex; justify-content: space-between; align-items: center;">
@@ -32,11 +37,7 @@
                               </div>
                         </div>
                     </div>
-                    @if ($message = Session::get('success'))
-                        <div class="alert alert-success m-4">
-                            <p>{{ $message }}</p>
-                        </div>
-                    @endif
+                    
 
                     <div class="card-body bg-white p-0">
                         <div class="table-responsive">
