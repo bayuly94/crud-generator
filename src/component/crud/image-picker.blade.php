@@ -30,13 +30,14 @@
                     </button>
                 </div>
                 <div class="modal-body">
+                    <img id="{{ $field }}_file_preview" src="" width="100%" class="border mb-2">
                     <input type="file" id="{{ $field }}_file" accept=".jpg,.png" />
                     <div>File .jpg, .png</div>
                     <div id="{{ $field }}_upload_progress"></div>
                 </div>
                 <div class="modal-footer">
 
-                    <button type="button" id="{{ $field }}_picker_upload" class="btn btn-primary">Unggah</button>
+                    <button type="button" id="{{ $field }}_picker_upload" class="btn btn-primary btn-block">Unggah</button>
                 </div>
             </div>
         </div>
@@ -47,6 +48,7 @@
 <script>
     // Get the input element
     const input = document.getElementById('{{ $field }}_picker');
+    const inputFile = document.getElementById('{{ $field }}_file');
     const pickerUpload = document.getElementById('{{ $field }}_picker_upload');
 
     var modal = $('#{{ $field }}_modal');
@@ -56,7 +58,20 @@
         modal.modal('show');
     });
 
-
+    // input file change
+    inputFile.addEventListener('change', function(event) {
+        var file = event.target.files[0]; // Get the first file
+        console.log(file);
+        if (file) {
+            var reader = new FileReader();
+            
+            reader.onload = function(e) {
+                $('#{{ $field }}_file_preview').attr('src', e.target.result).show(); // Set the image source and display it
+            }
+            
+            reader.readAsDataURL(file); // Read the file as a data URL
+        }
+    });
 
     pickerUpload.addEventListener('click', function() {
         var fileInput = $("#{{ $field }}_file")[0];
