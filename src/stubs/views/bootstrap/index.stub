@@ -18,16 +18,7 @@
                         <div style="display: flex; justify-content: space-between; align-items: center;">
 
                             <span id="card_title">
-                                <form method="GET">
-                                    <div class="input-group">
-                                        <input type="search" class="form-control" placeholder="{{ __('Search') }}" aria-label="{{ __('Search') }}" name="search" value="{{ request()->search ?? '' }}">
-                                        <div class="input-group-append">
-                                          <button class="btn btn-outline-secondary" type="submit">
-                                            <i class="fas fa-search"></i>
-                                          </button>
-                                        </div>
-                                    </div>
-                                </form>
+                                @include('vendor.crud-generator.searchbox')
                             </span>
 
                              <div class="float-right">
