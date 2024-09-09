@@ -1,5 +1,11 @@
 <div class="form-group mb-2 mb20">
     <label for="image" class="form-label">{{ $label }}</label>
+
+    @if (old($field, $value) != null)
+        <div>
+        <img id="{{ $field }}_preview" src="{{ Storage::url(old($field, $value)) }}" height="100" class="mt-2 mb-2 border" />
+        </div>
+    @endif
     <div class="input-group mb-3">
         <input type="text" readonly name="{{ $field }}" id="{{ $field }}" 
             class="form-control bg-white @error($field) is-invalid @enderror" value="{{ old($field, $value) }}"
@@ -76,6 +82,8 @@
 
                     if (response.file != null) {
                         $("#{{ $field }}").val(response.file);
+                        $("#{{ $field }}_preview").attr('src',response.url);
+
 
                         modal.modal('hide');
                     }
