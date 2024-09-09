@@ -24,9 +24,9 @@
                     </button>
                 </div>
                 <div class="modal-body">
-
-                        <input type="file" id="{{ $field }}_file" />
-                        <span id="{{ $field }}_upload_progress"></span>
+                    <input type="file" id="{{ $field }}_file" accept=".jpg,.png" />
+                    <div>File .jpg, .png</div>
+                    <div id="{{ $field }}_upload_progress"></div>
                 </div>
                 <div class="modal-footer">
 
