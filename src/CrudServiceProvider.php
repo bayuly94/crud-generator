@@ -34,7 +34,7 @@ class CrudServiceProvider extends ServiceProvider
         
         $this->publishes([
             __DIR__.'/../src/component' => resource_path('vendor/'),
-        ], 'component-crud');
+        ], 'crud');
     }
 
     /**
