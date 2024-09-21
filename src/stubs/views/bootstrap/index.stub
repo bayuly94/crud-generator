@@ -18,7 +18,7 @@
                         <div style="display: flex; justify-content: space-between; align-items: center;">
 
                             <span id="card_title">
-                                @include('vendor.crud.searchbox')
+                                <x-table.searchbox />
                             </span>
 
                              <div class="float-right">
