@@ -23,9 +23,9 @@ class CrudServiceProvider extends ServiceProvider
             ]);
         }
 
-        // $this->publishes([
-        //     __DIR__.'/config/crud.php' => config_path('crud.php'),
-        // ], 'crud');
+        $this->publishes([
+            __DIR__.'/config/crud.php' => config_path('crud.php'),
+        ], 'crud');
 
         $this->publishes([
             __DIR__.'/../src/stubs' => resource_path('stubs/crud/'),
