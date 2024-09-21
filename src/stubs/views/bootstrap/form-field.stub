@@ -1,1 +1,1 @@
-<x-form.input name="{{column}}" label="{{title}}" value="{{ ${{modelNameLowerCase}}?->{{column}} }}" />
+<x-form.input name="{{column}}" label="{{title}}" :value="${{modelNameLowerCase}}?->{{column}}" />
