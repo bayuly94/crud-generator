@@ -23,17 +23,22 @@ class CrudServiceProvider extends ServiceProvider
             ]);
         }
 
-        $this->publishes([
-            __DIR__.'/config/crud.php' => config_path('crud.php'),
-        ], 'crud');
+        // $this->publishes([
+        //     __DIR__.'/config/crud.php' => config_path('crud.php'),
+        // ], 'crud');
+
+        // $this->publishes([
+        //     __DIR__.'/../src/stubs' => resource_path('stubs/crud/'),
+        // ], 'stubs-crud');
+        
+        
+        // $this->publishes([
+        //     __DIR__.'/../src/component' => resource_path('components/'),
+        // ], 'crud');
+
 
         $this->publishes([
-            __DIR__.'/../src/stubs' => resource_path('stubs/crud/'),
-        ], 'stubs-crud');
-        
-        
-        $this->publishes([
-            __DIR__.'/../src/component' => resource_path('vendor/'),
+            __DIR__.'/../src/component' => resource_path('components/'),
         ], 'crud');
     }
 
